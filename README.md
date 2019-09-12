@@ -2,10 +2,15 @@
 
 > :straight_ruler: Harden your project with practical tests & debugging as you code.
 
-Automate argument validation: type checking, value range, string formats, urls, and more!
+Automate argument validation:
+- type checking
+- value range (units)
+- string formats
+- urls validity
+- and more!
 
 
-* Free software: MIT
+* Free software: MIT license
 * Documentation: https://typical.readthedocs.io.
 
 
@@ -36,6 +41,24 @@ Automate argument validation: type checking, value range, string formats, urls, 
 [![Updates][pyup-shield]][pyup-link]
 
 ## Features
+
+You can enfore any predicate validation on your function arguments.
+
+### Type Checking
+
+This module supports type hints as specified by [PEP 484][pep-484] and [PEP 526][pep-526] and implemented in the [typing module][typing-module]. The most fundamental support consists of the types Any, Union, Tuple, Callable, TypeVar, and Generic.
+
+### Unit Checking
+
+Typical can be used in conjunction with unit handling modules like [pint][pint-module].
+
+### Value Range
+
+### String Formats
+
+### URL Validation
+
+### Custom Validation
 
 ## Requirements
 
@@ -68,6 +91,11 @@ This package was created with [Cookiecutter][cookiecutter] and the custom [cooki
 ## License
 
 See [LICENSE](LICENSE)
+
+[pep-484]: https://www.python.org/dev/peps/pep-0484
+[pep-526]: https://www.python.org/dev/peps/pep-0526
+[pint-module]: https://pint.readthedocs.io
+[typing-module]: https://docs.python.org/3/library/typing.html
 
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [cookiecutter-pypackage]: https://github.com/moodule/cookiecutter-pypackage
