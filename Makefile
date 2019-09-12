@@ -48,7 +48,7 @@ test:
 	pipenv run py.test --junitxml=.tests_report.xml
 
 test-all:
-	tox
+	pipenv run tox
 
 coverage:
 	pipenv run py.test --cov-config .coveragerc --verbose --cov-report term --cov-report xml --cov=requests tests
