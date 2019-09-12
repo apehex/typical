@@ -13,6 +13,9 @@ with open('CHANGELOG.md') as history_file:
 
 requirements = [
     'Click>=6.0',
+    'decorator>=4.3.0',
+    'numpy>=1.14.2',
+    'sympy>=1.1.1',
     # TODO: put package requirements here
 ]
 

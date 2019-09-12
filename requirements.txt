@@ -1,7 +1,10 @@
 bumpversion>=0.5.3
 Click>=6.0
 coverage>=4.1
+decorator>=4.3.0
 flake8>=2.6.0
+numpy>=1.14.2
+sympy>=1.1.1
 pip>=8.1.2
 pytest>=2.9.2
 pytest-runner>=2.11.1

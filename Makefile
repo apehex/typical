@@ -26,7 +26,7 @@ update:
 	pipenv update
 	pipenv lock -r
 
-clean: clean-build clean-pyc
+clean: clean-build clean-docs clean-pyc
 
 clean-build:
 	rm -fr build/
