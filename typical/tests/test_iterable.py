@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 from numpy.testing import assert_allclose
 
-import typical
+from typical.iterable import scalar
 
 #####################################################################
 # MATRIX & ARRAY PREDICATES
@@ -24,7 +24,7 @@ def test_scalar_predicate_on_bs():
         np.arange(20).reshape(1, -1)]
 
     assert not any(map(
-        typical.scalar,
+        scalar,
         bs_scalar))
 
 def test_scalar_predicate_on_single_element_iterables():
@@ -38,5 +38,5 @@ def test_scalar_predicate_on_single_element_iterables():
         34576.435]
 
     assert all(map(
-        typical.scalar,
+        scalar,
         ok_scalar))

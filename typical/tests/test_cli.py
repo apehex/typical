@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `typical` package."""
+"""Tests for `typical` CLI."""
 
 import pytest
 from click.testing import CliRunner
 
-from typical import typical
 from typical import cli
 
 @pytest.fixture

@@ -11,9 +11,9 @@ from __future__ import division, print_function, absolute_import
 import numpy as np
 import sympy as smp
 
-from typical import typecheck
-
+from .generic import iterable
 from .numeric import numeric
+from .typical import typecheck
 
 #####################################################################
 # SYMBOLIC PREDICATES

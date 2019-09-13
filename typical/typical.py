@@ -1,26 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-===================
-Argument Validation
-===================
-
-Function decorators to check function arguments and return values against
-specified types or predicates.
-
-Examples
---------
-    >>> @typecheck
-    ... def average(x: int, y:int, z:int) -> float:
-    ...     return (x + y + z) / 2
-    ...
-    >>> average(5.5, 10, 15.0)
-    TypeWarning:  'average' method accepts (int, int, int), but was given
-    (float, int, float)
-    15.25
-    >>> average(5, 10, 15)
-    TypeWarning:  'average' method returns (float), but result is (int)
-    15
+==================
+Checking processes
+==================
 """
 
 from __future__ import division, print_function, absolute_import

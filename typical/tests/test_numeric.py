@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 from numpy.testing import assert_allclose
 
-import typical
+from typical.numeric import finite, numeric
 
 #####################################################################
 # NUMERIC PREDICATES
@@ -30,10 +30,10 @@ def test_numeric_on_scalars():
         np.bool_(64)]
 
     for x in bullshit:
-        assert not typical.numeric(x)
+        assert not numeric(x)
 
     for x in ok:
-        assert typical.numeric(x)
+        assert numeric(x)
 
 def test_numeric_on_iterables():
     bullshit = [
@@ -49,10 +49,10 @@ def test_numeric_on_iterables():
         np.arange(12).reshape(3, 4)]
 
     for x in bullshit:
-        assert not typical.numeric(x)
+        assert not numeric(x)
 
     for x in ok:
-        assert typical.numeric(x)
+        assert numeric(x)
 
 def test_finite_on_scalars():
     bullshit = [
@@ -69,10 +69,10 @@ def test_finite_on_scalars():
         np.bool_(64)]
 
     for x in bullshit:
-        assert not typical.finite(x)
+        assert not finite(x)
 
     for x in ok:
-        assert typical.finite(x)
+        assert finite(x)
 
 def test_finite_on_iterables():
     bullshit = [
@@ -90,7 +90,7 @@ def test_finite_on_iterables():
         np.arange(12).reshape(3, 4)]
 
     for x in bullshit:
-        assert not typical.finite(x)
+        assert not finite(x)
 
     for x in ok:
-        assert typical.finite(x)
+        assert finite(x)
