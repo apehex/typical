@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 from numpy.testing import assert_allclose
 
-import typical as types
+from typical.optimization import bounds, specifications
 
 #####################################################################
 # BOUNDS PREDICATES
@@ -29,7 +29,7 @@ def test_bounds_predicate_on_bullshit():
         np.arange(12).reshape(3, 4)]
 
     for x in bullshit:
-        assert not typical.bounds(x)
+        assert not bounds(x)
 
 def test_bounds_predicate_on_tuples():
     tuples = [
@@ -39,7 +39,7 @@ def test_bounds_predicate_on_tuples():
         (3.4, 9)]
 
     for x in tuples:
-        assert typical.bounds(x)
+        assert bounds(x)
 
 def test_bounds_predicate_on_dicts():
     dicts = [
@@ -48,14 +48,14 @@ def test_bounds_predicate_on_dicts():
         {'test': (3.4, 9.2)}]
 
     for x in dicts:
-        assert typical.bounds(x)
+        assert bounds(x)
 
 def test_bounds_predicate_on_arrays():
     arrays = [
         np.arange(12).reshape(6, -1)]
 
     for x in arrays:
-        assert typical.bounds(x)
+        assert bounds(x)
 
 #####################################################################
 # SPECIFICATIONS PREDICATES
@@ -77,7 +77,7 @@ def test_specifications_predicate_on_bullshit():
         np.arange(12).reshape(3, 4)]
 
     for x in bullshit:
-        assert not typical.specifications(x)
+        assert not specifications(x)
 
 def test_specifications_predicate_on_dicts():
     dicts = [
@@ -86,4 +86,4 @@ def test_specifications_predicate_on_dicts():
         {'test': (3.4, 9.2)}]
 
     for x in dicts:
-        assert typical.specifications(x)
+        assert specifications(x)

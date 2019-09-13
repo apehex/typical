@@ -2,8 +2,9 @@
 
 """Console script for typical."""
 
-import click
+from __future__ import division, print_function, absolute_import
 
+import click
 
 @click.command()
 def main(args=None):

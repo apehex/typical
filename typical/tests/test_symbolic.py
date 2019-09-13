@@ -10,7 +10,7 @@ import sympy as smp
 import pytest
 from numpy.testing import assert_allclose
 
-import typical
+from typical.symbolic import symbolic
 
 #####################################################################
 # SYMBOLIC PREDICATES
@@ -46,7 +46,7 @@ def test_symbolic():
         (x, x+y)]
 
     for a in bullshit:
-        assert not typical.symbolic(a)
+        assert not symbolic(a)
 
     for a in ok:
-        assert typical.symbolic(a)
+        assert symbolic(a)

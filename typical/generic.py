@@ -8,7 +8,7 @@ Generic Predicates
 
 from __future__ import division, print_function, absolute_import
 
-from typical import typecheck
+from .typical import _check, typecheck
 
 #####################################################################
 # GENERIC PREDICATES

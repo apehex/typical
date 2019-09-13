@@ -10,7 +10,17 @@ import sympy as smp
 import pytest
 from numpy.testing import assert_allclose
 
-import typical
+from typical.generic import (
+    anything,
+    all_of,
+    exactly,
+    nothing,
+    one_of,
+    iterable)
+from typical.iterable import scalar
+from typical.numeric import finite, numeric
+from typical.optimization import bounds, specifications
+from typical.symbolic import symbolic
 
 #####################################################################
 # GENERIC PREDICATES
@@ -37,7 +47,7 @@ def test_anything():
         np.bool_(64)]
 
     for x in bullshit:
-        assert typical.anything(x)
+        assert anything(x)
 
 def test_nothing():
 
@@ -61,9 +71,9 @@ def test_nothing():
         np.bool_(64)]
 
     for x in bullshit:
-        assert not typical.nothing(x)
+        assert not nothing(x)
 
-    assert typical.nothing(None)
+    assert nothing(None)
 
 def test_exactly():
     bullshit = [
@@ -79,8 +89,8 @@ def test_exactly():
         (None, 'r'),
         (None, ''),
         (None, list()),
-        (typical.exactly, typical.one_of),
-        (typical.numeric, typical.numeric(4))]
+        (exactly, one_of),
+        (numeric, numeric(4))]
 
     ok = [
         (list(), []),
@@ -90,12 +100,12 @@ def test_exactly():
         ('truc test', 'truc ' + 'test')]
 
     for pair in bullshit:
-        assert not typical.exactly(pair[0])(pair[1])
-        assert not typical.exactly(pair[1])(pair[0])
+        assert not exactly(pair[0])(pair[1])
+        assert not exactly(pair[1])(pair[0])
 
     for pair in ok:
-        assert typical.exactly(pair[0])(pair[1])
-        assert typical.exactly(pair[1])(pair[0])
+        assert exactly(pair[0])(pair[1])
+        assert exactly(pair[1])(pair[0])
 
 def test_one_of():
     x, y, z = smp.symbols('x y z')
@@ -118,18 +128,18 @@ def test_one_of():
         4.5 * z ** x]
 
     for a in ok_spec:
-        assert typical.one_of(typical.numeric, typical.symbolic)(a)
-        assert typical.one_of(typical.finite)(a)
-        assert typical.one_of(typical.symbolic, typical.iterable)(a)
+        assert one_of(numeric, symbolic)(a)
+        assert one_of(finite)(a)
+        assert one_of(symbolic, iterable)(a)
 
     for a in ok_symbolic:
-        assert not typical.one_of(typical.iterable, typical.specifications)(a)
-        assert typical.one_of(typical.iterable, typical.symbolic)(a)
+        assert not one_of(iterable, specifications)(a)
+        assert one_of(iterable, symbolic)(a)
 
-    assert typical.one_of(
-        typical.exactly('truc'),
-        typical.finite,
-        typical.exactly(list()))([])
+    assert one_of(
+        exactly('truc'),
+        finite,
+        exactly(list()))([])
 
 def test_all_of():
     x, y, z = smp.symbols('x y z')
@@ -152,22 +162,22 @@ def test_all_of():
         4.5 * z ** x]
 
     for a in ok_spec:
-        assert not typical.all_of(typical.numeric, typical.symbolic)(a)
-        assert typical.all_of(typical.finite)(a)
-        assert typical.all_of(typical.specifications, typical.iterable)(a)
+        assert not all_of(numeric, symbolic)(a)
+        assert all_of(finite)(a)
+        assert all_of(specifications, iterable)(a)
 
     for a in ok_symbolic:
-        assert typical.all_of(typical.scalar, typical.symbolic)(a)
-        assert typical.one_of(typical.finite, typical.symbolic)(a)
+        assert all_of(scalar, symbolic)(a)
+        assert one_of(finite, symbolic)(a)
 
-    assert typical.all_of(
-        typical.exactly(1.5),
-        typical.finite)(
+    assert all_of(
+        exactly(1.5),
+        finite)(
             1.5)
 
-    assert typical.all_of(
-        typical.exactly(1.5),
-        typical.finite)(
+    assert all_of(
+        exactly(1.5),
+        finite)(
             1.5)
 
 def test_iterable():
@@ -179,8 +189,8 @@ def test_iterable():
         np.inf,
         np.bool_(None),
         None,
-        typical.numeric,
-        typical.one_of(typical.numeric, typical.bounds)]
+        numeric,
+        one_of(numeric, bounds)]
 
     ok = [
         range(5),
@@ -189,7 +199,7 @@ def test_iterable():
         "iuuhig"]
 
     for x in bullshit:
-        assert not typical.iterable(x)
+        assert not iterable(x)
 
     for x in ok:
-        assert typical.iterable(x)
+        assert iterable(x)

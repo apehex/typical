@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 from numpy.testing import assert_allclose
 
-import typical
+from typical.plottable import trace_data
 
 #####################################################################
 # TRACE & CHARTS PREDICATES
@@ -35,7 +35,7 @@ def test_trace_data_predicate_on_bullshit():
         {'x': range(3), 'y': 'abc', 'name': ''}]        # y is not numeric data
 
     for x in bullshit:
-        assert not typical.trace_data(x)
+        assert not trace_data(x)
 
 def test_trace_data_predicate_on_dicts():
     dicts = [
@@ -43,4 +43,4 @@ def test_trace_data_predicate_on_dicts():
         {'x': [0, 0, 0], 'y': range(1,4), 'name': ''}]
 
     for x in dicts:
-        assert typical.trace_data(x)
+        assert trace_data(x)

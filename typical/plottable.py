@@ -8,9 +8,9 @@ Plottable Predicates
 
 from __future__ import division, print_function, absolute_import
 
-from typical import typecheck
-
+from .generic import iterable
 from .numeric import finite
+from .typical import typecheck
 
 #####################################################################
 # TRACE & CHARTS PREDICATES
