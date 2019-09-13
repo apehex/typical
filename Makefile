@@ -26,15 +26,12 @@ update:
 	pipenv update
 	pipenv lock -r
 
-clean: clean-build clean-docs clean-pyc
+clean: clean-build clean-pyc
 
 clean-build:
 	rm -fr build/
 	rm -fr dist/
 	rm -fr *.egg-info
-
-clean-docs:
-	make -C docs clean
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
@@ -52,10 +49,6 @@ test-all:
 
 coverage:
 	pipenv run py.test --cov-config .coveragerc --verbose --cov-report term --cov-report xml --cov=requests tests
-
-docs: clean-docs
-	make -C docs html
-	@echo "\033[95m\n\nBuild successful! View the docs homepage at docs/_build/html/index.html.\n\033[0m"
 
 release: clean
 	pipenv run setup.py sdist upload
