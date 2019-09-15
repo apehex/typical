@@ -10,7 +10,7 @@ from __future__ import division, print_function, absolute_import
 
 import numpy as np
 
-from .typical import typecheck
+from .typical import checks
 
 from .numeric import finite, numeric
 
@@ -18,7 +18,7 @@ from .numeric import finite, numeric
 # BOUNDS PREDICATES
 #####################################################################
 
-@typecheck
+@checks
 def _check_bounds_tuple(x) -> bool:
     """
     Checks whether a tuple is a valid bound.
@@ -43,7 +43,7 @@ def _check_bounds_tuple(x) -> bool:
 
     return is_valid
 
-@typecheck
+@checks
 def _check_bounds_dict(x) -> bool:
     """
     Checks whether a dict represents valid bounds.
@@ -67,7 +67,7 @@ def _check_bounds_dict(x) -> bool:
     
     return is_valid
 
-@typecheck
+@checks
 def _check_bounds_array(x) -> bool:
     """
     Checks whether a np.ndarray represents valid bounds.
@@ -92,7 +92,7 @@ def _check_bounds_array(x) -> bool:
 
     return is_valid
 
-@typecheck
+@checks
 def bounds(x) -> bool:
     """
     Checks whether an argument represents valid bounds.
@@ -120,7 +120,7 @@ def bounds(x) -> bool:
 # SPECIFICATIONS PREDICATES
 #####################################################################
 
-@typecheck
+@checks
 def specifications(x) -> bool:
     """
     Checks whether an argument represents valid specifications.

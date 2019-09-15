@@ -10,7 +10,7 @@ specified types or predicates.
 
 Examples
 --------
-    >>> @typecheck
+    >>> @checks
     ... def average(x: int, y:int, z:int) -> float:
     ...     return (x + y + z) / 2
     ...
@@ -37,7 +37,7 @@ from typical.numeric import finite, numeric
 from typical.optimization import bounds, specifications
 from typical.plottable import trace_data
 from typical.symbolic import symbolic
-from typical.typical import typecheck
+from typical.typical import checks
 
 __author__ = """apehex"""
 __email__ = 'apehex@protonmail.com'
@@ -69,4 +69,4 @@ __all__ += [
 	'symbolic']
 
 __all__ += [
-	'typecheck']
+	'checks']
