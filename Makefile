@@ -51,10 +51,10 @@ coverage:
 	pipenv run py.test --cov-config .coveragerc --verbose --cov-report term --cov-report xml --cov=requests tests
 
 release: clean
-	pipenv run setup.py sdist upload
-	pipenv run setup.py bdist_wheel upload
+	pipenv run python setup.py sdist upload
+	pipenv run python setup.py bdist_wheel upload
 
 sdist: clean
-	pipenv run setup.py sdist
-	pipenv run setup.py bdist_wheel upload
+	pipenv run python setup.py sdist
+	pipenv run python setup.py bdist_wheel upload
 	ls -l dist
