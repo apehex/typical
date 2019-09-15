@@ -71,13 +71,13 @@ def _check(arg, checker):
         return True   
 
 @decorator
-def typecheck(func, *args, **kwargs):
+def checks(func, *args, **kwargs):
     """
     Function decorator. Checks decorated function is given valid arguments,
     following the information written in the annotations.
 
     ! NOTE !
-    Only checking the varargs ; there's no information to chck the kwargs.
+    Only checking the varargs ; there's no information to check the kwargs.
 
     Parameters
     ----------

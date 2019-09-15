@@ -11,13 +11,13 @@ from __future__ import division, print_function, absolute_import
 import numpy as np
 
 from .generic import iterable
-from .typical import typecheck
+from .typical import checks
 
 #####################################################################
 # NUMERIC PREDICATES
 #####################################################################
 
-@typecheck
+@checks
 def _numeric_scalar(x) -> bool:
     """
     Checks a scalar object value against all the numeric types at once :
@@ -41,7 +41,7 @@ def _numeric_scalar(x) -> bool:
     else:
         return True
 
-@typecheck
+@checks
 def numeric(x) -> bool:
     """
     Checks an object against all the numeric types at once :
@@ -74,7 +74,7 @@ def numeric(x) -> bool:
     else:
         return _numeric_scalar(x)
 
-@typecheck
+@checks
 def _finite_scalar(x) -> bool:
     """
     Checks whether a scalar input is a finite numeric value.
@@ -96,7 +96,7 @@ def _finite_scalar(x) -> bool:
     else:
         return bool(np.all(np.isfinite(x)))
 
-@typecheck
+@checks
 def finite(x) -> bool:
     """
     Checks whether the input is (composed of) a finite numeric value.

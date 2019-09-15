@@ -13,13 +13,13 @@ import sympy as smp
 
 from .generic import iterable
 from .numeric import numeric
-from .typical import typecheck
+from .typical import checks
 
 #####################################################################
 # SYMBOLIC PREDICATES
 #####################################################################
 
-@typecheck
+@checks
 def _symbolic_scalar(x) -> bool:
     """
     Checks whether the input is a symbolic expression ; any class
@@ -37,7 +37,7 @@ def _symbolic_scalar(x) -> bool:
     """
     return numeric(x) or isinstance(x, smp.Expr)
 
-@typecheck
+@checks
 def symbolic(x) -> bool:
     """
     Checks whether the input is a symbolic expression ; any class

@@ -8,13 +8,13 @@ Generic Predicates
 
 from __future__ import division, print_function, absolute_import
 
-from .typical import _check, typecheck
+from .typical import _check, checks
 
 #####################################################################
 # GENERIC PREDICATES
 #####################################################################
 
-@typecheck
+@checks
 def anything(x) -> bool:
     """
     Accepts all the input values.
@@ -31,7 +31,7 @@ def anything(x) -> bool:
     """
     return True
 
-@typecheck
+@checks
 def nothing(x) -> bool:
     """
     Checks whether an input is None.
@@ -48,7 +48,7 @@ def nothing(x) -> bool:
     """
     return x is None
 
-@typecheck
+@checks
 def exactly(y) -> callable:
     """
     Checks whether an input has exactly the same content as
@@ -72,7 +72,7 @@ def exactly(y) -> callable:
 
     return _exactly
 
-@typecheck
+@checks
 def one_of(*checkers) -> callable:
     """
     Checks whether an input satisfies at least one of the given checkers.
@@ -94,7 +94,7 @@ def one_of(*checkers) -> callable:
 
     return __one_of
 
-@typecheck
+@checks
 def all_of(*checkers) -> callable:
     """
     Checks whether an input satisfies all the given checkers.
@@ -116,7 +116,7 @@ def all_of(*checkers) -> callable:
 
     return __all_of
 
-@typecheck
+@checks
 def iterable(x) -> bool:
     """
     Checks whether an object is iterable.

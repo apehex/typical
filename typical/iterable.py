@@ -10,7 +10,7 @@ from __future__ import division, print_function, absolute_import
 
 import numpy as np
 
-from .typical import typecheck
+from .typical import checks
 
 from .generic import iterable
 
@@ -21,7 +21,7 @@ from .generic import iterable
 # TODO distinguish the scalar schecking from the numeric checking
 # and array can be numeric, but it won't be scalar
 # and a scalar can be numeric or not but it won't be array like
-@typecheck
+@checks
 def _iterable_scalar(x) -> bool:
     """
     Checks whether an iterable argument is of dimension 1.
@@ -41,7 +41,7 @@ def _iterable_scalar(x) -> bool:
     elif iterable(x):
         return len(x) == 1
 
-@typecheck
+@checks
 def scalar(x) -> bool:
     """
     Checks whether an argument is of dimension 1.

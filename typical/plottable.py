@@ -10,13 +10,13 @@ from __future__ import division, print_function, absolute_import
 
 from .generic import iterable
 from .numeric import finite
-from .typical import typecheck
+from .typical import checks
 
 #####################################################################
 # TRACE & CHARTS PREDICATES
 #####################################################################
 
-@typecheck
+@checks
 def trace_data(x) -> bool:
     """
     Checks whether an argument contains graphing data.
