@@ -5,71 +5,66 @@
 
 from setuptools import setup, find_packages
 
-with open('README.md') as readme_file:
+with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('CHANGELOG.md') as history_file:
+with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'Click>=6.0',
-    'decorator>=4.3.0',
-    'numpy>=1.14.2',
-    'sympy>=1.1.1',
-    # TODO: put package requirements here
-]
+    'Click>=7.0',
+    'decorator>=4.3',
+    'numpy>=1.14',
+    'sympy>=1.1', ]
 
 setup_requirements = [
-    'bumpversion>=0.5.3',
-    'Sphinx>=1.4.8',
-    'watchdog>=0.8.3',
-    'wheel>=0.29.0',
-    # TODO(moodule): put setup requirements (distutils extensions, etc.) here
-]
+    'bump2version>=0.5',
+    'pip>=19.2',
+    'pytest-runner',
+    'twine>=1.14',
+    'watchdog>=0.9',
+    'wheel>=0.33',
+    'Sphinx>=1.8', ]
 
 test_requirements = [
-    'coverage>=4.1',
-    'flake8>=2.6.0',
-    'pytest>=2.9.2',
-    'pytest-runner>=2.11.1',
-    'tox>=2.3.1'
-    # TODO: put package test requirements here
-]
+    'coverage>=4.5',
+    'flake8>=3.7',
+    'pytest>=4.6',
+    'tox>=3.14', ]
 
 setup(
-    name='typical',
-    version='0.1.0',
-    description="Automate argument validation: type checking, value range, string formats, urls, and more!",
-    long_description=readme + '\n\n' + history,
-    long_description_content_type="text/markdown",
     author="David Mougeolle",
     author_email='david.mougeolle@gmail.com',
-    url='https://github.com/moodule/typical',
-    packages=find_packages(include=['typical']),
-    entry_points={
-        'console_scripts': [
-            'typical=typical.cli:main'
-        ]
-    },
-    include_package_data=True,
-    install_requires=requirements,
-    license="MIT",
-    zip_safe=False,
-    keywords='typical',
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
+    description=":straight_ruler: Harden your project with practical tests & debugging as you code.",
+    entry_points={
+        'console_scripts': [
+            'typical=typical.cli:main',
+        ],
+    },
+    install_requires=requirements,
+    license="MIT license",
+    long_description=readme + '\n\n' + history,
+    include_package_data=True,
+    keywords='typical',
+    name='typical',
+    packages=find_packages(include=['typical', 'typical.*']),
+    setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    setup_requires=setup_requirements,
+    url='https://github.com/moodule/typical',
+    version='0.1.0',
+    zip_safe=False,
 )
