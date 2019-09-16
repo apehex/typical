@@ -1,74 +1,7 @@
-# OSX useful to ignore
-*.DS_Store
-.AppleDouble
-.LSOverride
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-# Linux
-._*
-*~
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
-
-# Windows thumbnail cache files
-Thumbs.db
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# Git
-*.orig
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Visual Studio
-.vscode/
 
 # C extensions
 *.so
@@ -87,10 +20,10 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -110,10 +43,9 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
 .hypothesis/
 .pytest_cache/
-.tests_report.xml
 
 # Translations
 *.mo
@@ -122,7 +54,6 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
 
 # Flask stuff:
 instance/
@@ -149,16 +80,13 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# dotenv
 .env
+
+# virtualenv
 .venv
-.venv/
-env/
 venv/
 ENV/
-env.bak/
-venv.bak/
-Pipfile*
 
 # Spyder project settings
 .spyderproject
@@ -172,16 +100,3 @@ Pipfile*
 
 # mypy
 .mypy_cache/
-
-# IntelliJ Idea family of suites
-.idea
-*.iml
-## File-based project format:
-*.ipr
-*.iws
-## mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# Cookiecutter
-output/
-python_boilerplate/
