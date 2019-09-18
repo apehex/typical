@@ -41,7 +41,7 @@ from typical.typical import checks
 
 __author__ = """apehex"""
 __email__ = 'apehex@protonmail.com'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 __all__ = [
 	'all_of',
