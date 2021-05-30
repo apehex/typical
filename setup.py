@@ -34,7 +34,7 @@ test_requirements = [
 
 setup(
     author="apehex",
-    author_email='apehex@protonmail.com',
+    author_email='david.mougeolle@gmail.com',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',

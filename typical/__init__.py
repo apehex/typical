@@ -39,17 +39,17 @@ from typical.plottable import trace_data
 from typical.symbolic import symbolic
 from typical.typical import checks
 
-__author__ = """apehex"""
+__author__ = 'apehex'
 __email__ = 'apehex@protonmail.com'
-__version__ = '0.1.1'
+__version__ = version(__package__)
 
 __all__ = [
 	'all_of',
-    'anything',
-    'exactly',
-    'iterable',
-    'nothing',
-    'one_of']
+  'anything',
+  'exactly',
+  'iterable',
+  'nothing',
+  'one_of']
 
 __all__ += [
     'scalar']

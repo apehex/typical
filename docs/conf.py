@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Typical Arguments'
-copyright = u"2019, apehex"
+copyright = u"2021, apehex"
 author = u"apehex"
 
 # The version info for the project you're documenting, acts as replacement

@@ -106,7 +106,7 @@ Before you submit a pull request, check that it meets these guidelines:
 Add a New Test
 --------------
 
-When fixing a bug or adding features, it's good practice to add a test to demonstrate your fix or new feature behaves as expected. These tests should focus on one tiny bit of functionality and prove changes are correct. 
+When fixing a bug or adding features, it's good practice to add a test to demonstrate your fix or new feature behaves as expected. These tests should focus on one tiny bit of functionality and prove changes are correct.
 
 To write and run your new test, follow these steps:
 
