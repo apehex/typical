@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "typical"
+version = "0.1.1"
+description = ":straight_ruler: Harden your project with practical tests & debugging as you code."
+license = "MIT"
+authors = ["apehex <apehex@protonmail.com>"]
+readme = ".github/README.rst"
+repository = "https://github.com/apehex/adviz.git"
+keywords = ["python-types", "typing", "type-annotations", "type-hints", "machine-learning", "data-validation"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+decorator = "*"
+numpy = "*"
+sympy = "*"
+Click = "*"
+
+[tool.poetry.dev-dependencies]
+flake8 = "*"
+pytest = "*"
+sphinx = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
