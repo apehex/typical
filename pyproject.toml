@@ -9,7 +9,7 @@ repository = "https://github.com/apehex/adviz.git"
 keywords = ["python-types", "typing", "type-annotations", "type-hints", "machine-learning", "data-validation"]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.9"
 decorator = "*"
 numpy = "*"
 sympy = "*"

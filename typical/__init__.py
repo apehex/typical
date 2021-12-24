@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 ===================
 Argument Validation
@@ -24,9 +22,10 @@ Examples
 """
 
 from __future__ import division, print_function, absolute_import
+from importlib.metadata import version
 
 from typical.generic import (
-	all_of,
+    all_of,
     anything,
     exactly,
     iterable,
@@ -44,29 +43,29 @@ __email__ = 'apehex@protonmail.com'
 __version__ = version(__package__)
 
 __all__ = [
-	'all_of',
-  'anything',
-  'exactly',
-  'iterable',
-  'nothing',
-  'one_of']
+    'all_of',
+    'anything',
+    'exactly',
+    'iterable',
+    'nothing',
+    'one_of']
 
 __all__ += [
     'scalar']
 
 __all__ += [
-	'finite',
-	'numeric']
+    'finite',
+    'numeric']
 
 __all__ += [
-	'bounds',
-	'specifications']
+    'bounds',
+    'specifications']
 
 __all__ += [
-	'trace_data']
+    'trace_data']
 
 __all__ += [
-	'symbolic']
+    'symbolic']
 
 __all__ += [
-	'checks']
+    'checks']
